@@ -3,26 +3,115 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.jobportal.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:name="com.example.jobportal.ui.job_dashboard.JobListFragment"
+        android:label="Job Portal"
         tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <argument
+            android:name="user"
+            app:argType="com.example.jobportal.ui.data.UserData" />
+        <action
+            android:id="@+id/action_FirstFragment_to_profieFragment"
+            app:destination="@id/profieFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_FirstFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_FirstFragment_to_jobDashboardDetail"
+            app:destination="@id/jobDashboardDetail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_FirstFragment_to_applyJobFragment"
+            app:destination="@id/applyJobFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.jobportal.SecondFragment"
+        android:name="com.example.jobportal.ui.cv_accepted.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/FirstFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.jobportal.ui.login.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_loginFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationActivity"
+            app:destination="@id/registrationActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationActivity"
+        android:name="com.example.jobportal.ui.registration.RegistrationActivity"
+        android:label=""
+        tools:layout="@layout/fragment_registration_activity" />
+    <fragment
+        android:id="@+id/profieFragment"
+        android:name="com.example.jobportal.ui.profile.ProfieFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profie" />
+    <fragment
+        android:id="@+id/jobDashboardDetail"
+        tools:layout="@layout/fragment_job_dashboard_detail"
+        android:name="com.example.jobportal.ui.job_dashboard_detail.JobDashboardDetail"
+        android:label="Job Offer Detail" >
+        <argument
+            android:name="data"
+            app:argType="com.example.jobportal.ui.job_dashboard.JobSeekerData"
+            app:nullable="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/applyJobFragment"
+        android:name="com.example.jobportal.ui.apply_job.ApplyJobFragment"
+        android:label="fragment_apply_job"
+        tools:layout="@layout/fragment_apply_job" />
 </navigation>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.job_dashboard_detail.JobDashboardDetail">
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/round_icon"
+            android:gravity="center"
+            android:text="sr"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22000003" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prince Agrawal"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Name -"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Android Developer"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintStart_toStartOf="@+id/contactNumber"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/experiance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 years"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintStart_toStartOf="@+id/email"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Work Experience -"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintEnd_toEndOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email@gamil.com"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/textView15"
+            app:layout_constraintStart_toStartOf="@+id/occupation"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginTop="16dp"
+            android:text="Email -"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintEnd_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/contactNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9876543210"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/textView11"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Contact Number-"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Job Preference -"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:layout_constraintEnd_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Call Employee"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Approve"
+            app:layout_constraintBottom_toBottomOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.57" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.47" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
