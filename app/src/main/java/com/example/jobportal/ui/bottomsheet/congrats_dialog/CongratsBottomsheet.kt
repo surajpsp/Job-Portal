@@ -1,14 +1,13 @@
-package com.example.jobportal.ui.apply_job
+package com.example.jobportal.ui.bottomsheet.congrats_dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.jobportal.R
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-
-class ApplyJobFragment : BottomSheetDialogFragment() {
+class CongratsBottomsheet : Fragment() {
 
 
     override fun onCreateView(
@@ -16,6 +15,6 @@ class ApplyJobFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_apply_job, container, false)
+        return inflater.inflate(R.layout.fragment_congrats_bottomsheet, container, false)
     }
 }

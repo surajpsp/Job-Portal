@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_applyJobFragment"
             app:destination="@id/applyJobFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_congratsBottomsheet"
+            app:destination="@id/congratsBottomsheet" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -111,7 +114,12 @@
     </fragment>
     <dialog
         android:id="@+id/applyJobFragment"
-        android:name="com.example.jobportal.ui.apply_job.ApplyJobFragment"
+        android:name="com.example.jobportal.ui.bottomsheet.apply_job.ApplyJobFragment"
         android:label="fragment_apply_job"
         tools:layout="@layout/fragment_apply_job" />
+    <fragment
+        android:id="@+id/congratsBottomsheet"
+        android:name="com.example.jobportal.ui.bottomsheet.congrats_dialog.CongratsBottomsheet"
+        android:label="fragment_congrats_bottomsheet"
+        tools:layout="@layout/fragment_congrats_bottomsheet" />
 </navigation>

@@ -19,7 +19,8 @@ import com.example.jobportal.common.shared_cache.MySharedPrefs
 import com.example.jobportal.databinding.FragmentFirstBinding
 import com.example.jobportal.ui.adapter.JobRecruiterAdapter
 import com.example.jobportal.ui.adapter.JobSeekerAdapter
-import com.example.jobportal.ui.post_job.PostJobFragment
+import com.example.jobportal.ui.bottomsheet.apply_job.ApplyJobFragment
+import com.example.jobportal.ui.bottomsheet.post_job.PostJobFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
@@ -76,7 +77,6 @@ class JobListFragment : Fragment(), AdapterListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -199,8 +199,16 @@ class JobListFragment : Fragment(), AdapterListener {
 
         } else {
 
-            findNavController().navigate(R.id.action_FirstFragment_to_applyJobFragment)
+//            val jobSeekerData = data as JobOfferData
 
+            val fragment = ApplyJobFragment { jobSeekerData ->
+                viewModel.addJobSeeker(jobSeekerData)
+                findNavController().navigate(R.id.action_FirstFragment_to_congratsBottomsheet)
+                Toast.makeText(requireContext(), "Job Offer Added Success!", Toast.LENGTH_SHORT)
+                    .show()
+            }
+            fragment.show(requireActivity().supportFragmentManager, fragment.tag)
+//            findNavController().navigate(R.id.action_FirstFragment_to_applyJobFragment)
         }
     }
 }

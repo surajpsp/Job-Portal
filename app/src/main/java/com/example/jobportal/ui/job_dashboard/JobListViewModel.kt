@@ -22,8 +22,8 @@ class JobListViewModel @Inject constructor(
 //    val data get() = _data
     private val TAG = "JobListViewModel"
 
-    var listData:List<Any>? = null
-    private val jobOfferData:JobOfferData? = null
+    var listData: List<Any>? = null
+    private val jobOfferData: JobOfferData? = null
 
     private val _jobSeekerState =
         MutableStateFlow<Resource<List<JobSeekerData>>>(Resource.Loading(false))
@@ -39,6 +39,14 @@ class JobListViewModel @Inject constructor(
         response.collect {
             Log.d(TAG, "onLogin: collect - ${it.data}")
             _jobOfferState.value = it
+        }
+    }
+
+    fun addJobSeeker(jobOfferData: JobSeekerData) = viewModelScope.launch {
+        val response = jobSeekerRepository.insertJobSeeker(jobOfferData)
+        response.collect {
+            Log.d(TAG, "onLogin: collect - ${it.data}")
+            _jobSeekerState.value = it
         }
     }
 

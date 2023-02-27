@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.post_job.PostJobFragment">
+        tools:context=".ui.bottomsheet.post_job.PostJobFragment">
 
         <TextView
             android:id="@+id/textView6"
@@ -120,7 +120,6 @@
                 android:selectAllOnFocus="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <Button
             android:id="@+id/login"

@@ -1,4 +1,4 @@
-package com.example.jobportal.ui.post_job
+package com.example.jobportal.ui.bottomsheet.apply_job
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,13 @@ import android.widget.ArrayAdapter
 import com.example.jobportal.R
 import com.example.jobportal.common.onTextChange
 import com.example.jobportal.common.shared_cache.MySharedPrefs
-import com.example.jobportal.databinding.FragmentPostJobBinding
-import com.example.jobportal.ui.job_dashboard.JobOfferData
+import com.example.jobportal.databinding.FragmentApplyJobBinding
+import com.example.jobportal.ui.job_dashboard.JobSeekerData
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
+class ApplyJobFragment(private val onAdd: (JobSeekerData) -> Unit) : BottomSheetDialogFragment() {
 
-class PostJobFragment(private val onAdd: (JobOfferData) -> Unit) : BottomSheetDialogFragment() {
-
-
-    private var _binding: FragmentPostJobBinding? = null
+    private var _binding: FragmentApplyJobBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,7 +22,7 @@ class PostJobFragment(private val onAdd: (JobOfferData) -> Unit) : BottomSheetDi
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentPostJobBinding.inflate(inflater, container, false)
+        _binding = FragmentApplyJobBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -74,22 +72,19 @@ class PostJobFragment(private val onAdd: (JobOfferData) -> Unit) : BottomSheetDi
 
         val sharedPrefs = MySharedPrefs(requireContext())
 
-        val jobOffer = JobOfferData(
+        val jobOffer = JobSeekerData(
             id = id,
             title = binding.jobTitle.text.toString(),
-            budget = binding.sallery.text.toString(),
-            experiance = binding.experiance.text.toString(),
-            company = sharedPrefs.companyName!!,
-            jobType = binding.jobType.text.toString(),
-            user = sharedPrefs.name!!,
-            status = false,
-            date = "",
-            appliedDate = ""
+            name = sharedPrefs.name!!,
+            mobile = sharedPrefs.mobile!!,
+            email = sharedPrefs.email!!,
+            status = binding.sallery.text.toString(),
+            date = binding.jobType.text.toString(),
+            experiance = binding.experiance.text.toString()
         )
 
         this.dismissNow()
         this.dismiss()
         onAdd(jobOffer)
     }
-
 }
