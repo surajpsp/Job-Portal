@@ -104,9 +104,9 @@
         tools:layout="@layout/fragment_profie" />
     <fragment
         android:id="@+id/jobDashboardDetail"
-        tools:layout="@layout/fragment_job_dashboard_detail"
         android:name="com.example.jobportal.ui.job_dashboard_detail.JobDashboardDetail"
-        android:label="Job Offer Detail" >
+        android:label="Job Offer Detail"
+        tools:layout="@layout/fragment_job_dashboard_detail">
         <argument
             android:name="data"
             app:argType="com.example.jobportal.ui.job_dashboard.JobSeekerData"
@@ -117,7 +117,7 @@
         android:name="com.example.jobportal.ui.bottomsheet.apply_job.ApplyJobFragment"
         android:label="fragment_apply_job"
         tools:layout="@layout/fragment_apply_job" />
-    <fragment
+    <dialog
         android:id="@+id/congratsBottomsheet"
         android:name="com.example.jobportal.ui.bottomsheet.congrats_dialog.CongratsBottomsheet"
         android:label="fragment_congrats_bottomsheet"
