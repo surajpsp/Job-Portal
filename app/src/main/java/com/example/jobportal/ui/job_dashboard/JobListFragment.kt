@@ -150,7 +150,7 @@ class JobListFragment : Fragment(), AdapterListener {
     private fun onJobSeekerLoaded(data: List<JobSeekerData>?) {
         data?.let {
             jobSeekerAdapter.apply {
-                list = it
+                list = it.reversed()
                 notifyItemRangeInserted(0, data.lastIndex)
                 notifyDataSetChanged()
             }
@@ -161,7 +161,7 @@ class JobListFragment : Fragment(), AdapterListener {
         Log.d(TAG, "onJobOfferLoaded: list -> $data")
         data?.let {
             jobOfferAdapter.apply {
-                list = it
+                list = it.reversed()
                 notifyItemRangeInserted(0, data.lastIndex)
                 notifyDataSetChanged()
             }
