@@ -9,7 +9,11 @@ fun JobSeekerEntity.toJobSeekerData(): JobSeekerData {
         title = title,
         name = name,
         mobile = mobile,
-        email, status, date, experiance
+        email = email,
+        status = status,
+        date = date,
+        experiance = experiance,
+        jobDescription = jobDescription
     )
 }
 
@@ -22,6 +26,7 @@ fun JobSeekerData.toJobSeekerEntity(): JobSeekerEntity {
         email = email,
         status = status,
         date = date,
-        experiance = experiance
+        experiance = experiance,
+        jobDescription = jobDescription
     )
 }

@@ -35,6 +35,8 @@ class PostJobFragment(private val onAdd: (JobOfferData) -> Unit) : BottomSheetDi
         binding.sallery.onTextChange(binding.salleryBox)
         binding.jobType.onTextChange(binding.jobTitleBox)
         binding.experiance.onTextChange(binding.experianceBox)
+        binding.jobDescription.onTextChange(binding.jobDescriptionBox)
+        binding.lastDate.onTextChange(binding.lastDateBox)
 
         val array = resources.getStringArray(R.array.jobType)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_down_layout, array)
@@ -54,6 +56,16 @@ class PostJobFragment(private val onAdd: (JobOfferData) -> Unit) : BottomSheetDi
 
         if (binding.jobTitle.text.isNullOrEmpty()) {
             binding.jobTitleBox.error = "Title Invalid!"
+            return
+        }
+
+        if (binding.jobDescription.text.isNullOrEmpty()) {
+            binding.jobDescriptionBox.error = "Description Invalid!"
+            return
+        }
+
+        if (binding.lastDate.text.isNullOrEmpty()) {
+            binding.lastDateBox.error = "Last Date Invalid!"
             return
         }
 
@@ -79,12 +91,12 @@ class PostJobFragment(private val onAdd: (JobOfferData) -> Unit) : BottomSheetDi
             title = binding.jobTitle.text.toString(),
             budget = binding.sallery.text.toString(),
             experiance = binding.experiance.text.toString(),
-            company = sharedPrefs.companyName!!,
+            company = sharedPrefs.companyName ?: "Confidential",
             jobType = binding.jobType.text.toString(),
             user = sharedPrefs.name!!,
             status = false,
-            date = "",
-            appliedDate = ""
+            date = binding.lastDate.text.toString(),
+            appliedDate = binding.jobDescription.text.toString()
         )
 
         this.dismissNow()

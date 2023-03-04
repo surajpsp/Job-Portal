@@ -7,6 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class JobSeekerData(
     val id: Int,
     val title: String,
+    val jobDescription:String,
     val name: String,
     val mobile: String,
     val email: String,

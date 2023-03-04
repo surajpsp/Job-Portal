@@ -33,6 +33,8 @@ class ApplyJobFragment(private val onAdd: (JobSeekerData) -> Unit) : BottomSheet
         binding.sallery.onTextChange(binding.salleryBox)
         binding.jobType.onTextChange(binding.jobTitleBox)
         binding.experiance.onTextChange(binding.experianceBox)
+        binding.jobDescription.onTextChange(binding.jobDescriptionBox)
+        binding.projects.onTextChange(binding.projectsBox)
 
         val array = resources.getStringArray(R.array.jobType)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.drop_down_layout, array)
@@ -55,8 +57,18 @@ class ApplyJobFragment(private val onAdd: (JobSeekerData) -> Unit) : BottomSheet
             return
         }
 
+        if (binding.jobDescription.text.isNullOrEmpty()) {
+            binding.jobDescriptionBox.error = "Title Invalid!"
+            return
+        }
+
         if (binding.sallery.text.isNullOrEmpty()) {
             binding.salleryBox.error = "Sallery Invalid!"
+            return
+        }
+
+        if (binding.projects.text.isNullOrEmpty()) {
+            binding.projectsBox.error = "Sallery Invalid!"
             return
         }
 
@@ -75,11 +87,12 @@ class ApplyJobFragment(private val onAdd: (JobSeekerData) -> Unit) : BottomSheet
         val jobOffer = JobSeekerData(
             id = id,
             title = binding.jobTitle.text.toString(),
+            jobDescription = binding.jobDescription.text.toString(),
             name = sharedPrefs.name!!,
             mobile = sharedPrefs.mobile!!,
             email = sharedPrefs.email!!,
             status = binding.sallery.text.toString(),
-            date = binding.jobType.text.toString(),
+            date = binding.projects.text.toString(),
             experiance = binding.experiance.text.toString()
         )
 

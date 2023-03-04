@@ -12,5 +12,6 @@ data class JobSeekerEntity(
     val email: String,
     val status: String,
     val date: String,
-    val experiance: String
+    val experiance: String,
+    val jobDescription:String
 )

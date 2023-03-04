@@ -134,8 +134,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "jassigill@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "12",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -146,8 +147,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "neaha@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "122",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -158,8 +160,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "amamn@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "2",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -170,8 +173,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "jassigill@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "12",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -182,8 +186,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "jassigill@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "22",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -194,8 +199,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "jassigill@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "2",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -206,8 +212,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "jassigill@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "1",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 
@@ -218,8 +225,9 @@ fun addFakeJobSeeker(): List<JobSeekerEntity> {
                 mobile = "9876543210",
                 email = "jassigill@emai.com",
                 status = "false",
-                date = "12/10/2022",
-                experiance = "4"
+                date = "12",
+                experiance = "4",
+                jobDescription = "A job description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a position. It may specify the functionary to whom the position reports, specifications such"
             )
         )
 

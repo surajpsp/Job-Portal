@@ -15,7 +15,7 @@ class DbModule {
     @Provides
     @Singleton
     fun provideILocalDatabase(application: Application): MainDb {
-        return Room.databaseBuilder(application, MainDb::class.java, "jobprinceprotalnew.db").build()
+        return Room.databaseBuilder(application, MainDb::class.java, "jobprinceprotalnewone.db").build()
     }
 
 }

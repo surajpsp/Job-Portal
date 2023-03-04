@@ -12,7 +12,7 @@ data class JobOfferEntity(
     val company: String,
     val jobType: String,
     val user: String,
-    val status:Boolean,
-    val date:String,
-    val appliedDate:String
+    val status: Boolean,
+    val date: String,
+    val appliedDate: String
 )
