@@ -39,5 +39,5 @@ fun isNameValid(name:String):Boolean{
 }
 
 fun isCompanyNameValid(name:String):Boolean{
-    return (name.length > 80)
+    return (name.length > 100)
 }

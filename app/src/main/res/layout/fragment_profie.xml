@@ -51,15 +51,16 @@
 
         <TextView
             android:id="@+id/occupation"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:text="Android Developer"
-            android:visibility="gone"
+            android:layout_marginEnd="8dp"
+            android:text="Android Developer, PHP developer, android Stuf , laravl nad mory"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
-            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/contactNumber"
-            app:layout_constraintTop_toTopOf="@+id/textView13" />
+            app:layout_constraintTop_toTopOf="@+id/skillsOrCompany" />
 
         <TextView
             android:id="@+id/experiance"
@@ -83,11 +84,12 @@
 
         <TextView
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="email@gamil.com"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintBottom_toBottomOf="@+id/textView15"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/occupation"
             app:layout_constraintTop_toTopOf="@+id/textView15" />
 
@@ -98,8 +100,8 @@
             android:layout_marginTop="16dp"
             android:text="Email -"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
-            app:layout_constraintEnd_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            app:layout_constraintEnd_toEndOf="@+id/skillsOrCompany"
+            app:layout_constraintTop_toBottomOf="@+id/occupation" />
 
         <TextView
             android:id="@+id/contactNumber"
@@ -123,12 +125,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/skillsOrCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Job Preference -"
-            android:visibility="gone"
+            android:text="Skills"
+            android:visibility="visible"
             android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
             app:layout_constraintEnd_toEndOf="@+id/textView11"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />

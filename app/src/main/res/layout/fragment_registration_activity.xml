@@ -52,8 +52,8 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLength="50"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:maxLength="50" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -71,8 +71,8 @@
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLength="90"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:maxLength="90" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -86,14 +86,15 @@
             android:maxLength="10"
             app:layout_constraintBottom_toTopOf="@+id/passwordBox"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLength="10"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:maxLength="10" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -115,9 +116,30 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_password"
                 android:imeActionLabel="@string/action_sign_in_short"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/skillBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:hint="Enter Your Skills"
+            app:layout_constraintEnd_toEndOf="@+id/passwordBox"
+            app:layout_constraintStart_toStartOf="@+id/passwordBox"
+            app:layout_constraintTop_toBottomOf="@+id/passwordBox"
+            tools:ignore="HardcodedText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/skill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
+                android:maxLength="80"
                 android:imeOptions="actionDone"
-                android:inputType="textPassword"
                 android:selectAllOnFocus="true" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatCheckBox
@@ -130,7 +152,7 @@
             android:text="Register as Recruiter to post Jobs"
             app:layout_constraintEnd_toEndOf="@+id/passwordBox"
             app:layout_constraintStart_toStartOf="@+id/passwordBox"
-            app:layout_constraintTop_toBottomOf="@+id/companyNameBox"
+            app:layout_constraintTop_toBottomOf="@+id/skillBox"
             tools:ignore="HardcodedText" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -138,23 +160,22 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
             android:hint="Company Name"
             android:visibility="@{recruiterCheck.isChecked() ? View.VISIBLE : View.GONE,default = gone}"
             app:layout_constraintEnd_toEndOf="@+id/passwordBox"
             app:layout_constraintStart_toStartOf="@+id/passwordBox"
-            app:layout_constraintTop_toBottomOf="@+id/passwordBox"
+            app:layout_constraintTop_toBottomOf="@+id/recruiterCheck"
             tools:ignore="HardcodedText">
-
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/companyName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
-                android:maxLength="80"
                 android:inputType="textCapCharacters"
+                android:maxLength="80"
                 android:selectAllOnFocus="true" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -166,7 +187,7 @@
             android:text="Register"
             app:layout_constraintEnd_toEndOf="@+id/passwordBox"
             app:layout_constraintStart_toStartOf="@+id/passwordBox"
-            app:layout_constraintTop_toBottomOf="@+id/recruiterCheck"
+            app:layout_constraintTop_toBottomOf="@+id/companyNameBox"
             tools:ignore="HardcodedText" />
 
         <ProgressBar

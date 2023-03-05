@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.jobportal.common.local.entity.UserType
 import com.example.jobportal.common.shared_cache.MySharedPrefs
 import com.example.jobportal.databinding.FragmentProfieBinding
 
@@ -15,9 +16,8 @@ class ProfieFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProfieBinding.inflate(inflater, container, false)
         return binding.root
@@ -32,6 +32,11 @@ class ProfieFragment : Fragment() {
         binding.contactNumber.text = sharedPrefs.mobile!!
         binding.email.text = sharedPrefs.email!!
         binding.experiance.text = sharedPrefs.userType!!
+
+        if (sharedPrefs.userType != UserType.RECRUITER.name) binding.skillsOrCompany.text =
+            "Skills" else binding.skillsOrCompany.text = "Company Name"
+
+        binding.occupation.text = sharedPrefs.companyName.toString()
     }
 
 

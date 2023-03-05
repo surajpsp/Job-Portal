@@ -96,10 +96,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun onSuccess(data: UserData?) = lifecycleScope.launch() {
-        Log.d(TAG, "onSuccess: data Start- > $data")
-        Log.d(TAG, "onSuccess: id Start- ${mySharedPrefs.id}")
-        Log.d(TAG, "onSuccess: name Start- ${mySharedPrefs.name}")
-        Log.d(TAG, "onSuccess: email Start- ${mySharedPrefs.email}")
 
         dismissProgress()
         mySharedPrefs.id = data?.id!!
@@ -107,10 +103,7 @@ class LoginFragment : Fragment() {
         mySharedPrefs.email = data.email
         mySharedPrefs.mobile = data.mobile
         mySharedPrefs.userType = data.type.toString()
-
-        Log.d(TAG, "onSuccess: id - ${mySharedPrefs.id}")
-        Log.d(TAG, "onSuccess: name - ${mySharedPrefs.name}")
-        Log.d(TAG, "onSuccess: email - ${mySharedPrefs.email}")
+        mySharedPrefs.companyName = data.company.toString()
 
         delay(1000)
         findNavController().navigate(R.id.action_loginFragment_to_FirstFragment)

@@ -30,8 +30,7 @@ class RegistrationActivity : Fragment() {
     private val TAG = "RegistrationActivity"
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRegistrationActivityBinding.inflate(inflater, container, false)
@@ -51,9 +50,11 @@ class RegistrationActivity : Fragment() {
         binding.mobile.onTextChange(binding.mobileBox)
         binding.password.onTextChange(binding.passwordBox)
         binding.companyName.onTextChange(binding.companyNameBox)
+        binding.skill.onTextChange(binding.skillBox)
 
         binding.recruiterCheck.setOnCheckedChangeListener { compoundButton, b ->
             binding.companyNameBox.visibility = if (b) View.VISIBLE else View.GONE
+            binding.skillBox.visibility = if (b.not()) View.VISIBLE else View.GONE
         }
 
         binding.registerBtn.setOnClickListener {
@@ -88,8 +89,7 @@ class RegistrationActivity : Fragment() {
     private fun showProgress() = binding.registerBtn.showProgress {
         buttonTextRes = R.string.progress
         progressColor = ContextCompat.getColor(
-            requireContext(),
-            com.google.android.material.R.color.design_default_color_primary
+            requireContext(), com.google.android.material.R.color.design_default_color_primary
         )
     }
 
@@ -132,20 +132,27 @@ class RegistrationActivity : Fragment() {
             return
         }
 
+        if (binding.recruiterCheck.isChecked.not() && binding.skill.text.isNullOrEmpty()) {
+            binding.skillBox.error = "Skills Invalid!"
+            return
+        }
 
-        if (isCompanyNameValid(binding.companyName.text.toString())) {
+        if (binding.recruiterCheck.isChecked && isCompanyNameValid(binding.companyName.text.toString())) {
             binding.companyNameBox.error = "Company Name Invalid!"
             return
         }
 
         binding.registerBtn.isEnabled = false
 
+        val companyName = if (binding.recruiterCheck.isChecked) binding.companyName.text.toString()
+        else binding.skill.text.toString()
+
         viewModel.registerNow(
             binding.name.text.toString(),
             binding.username.text.toString(),
             binding.mobile.text.toString(),
             binding.password.text.toString(),
-            binding.companyName.text.toString(),
+            companyName,
             binding.recruiterCheck.isChecked,
         )
     }
